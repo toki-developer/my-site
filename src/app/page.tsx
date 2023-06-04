@@ -27,18 +27,24 @@ export default async function Page() {
 }
 
 const TwitterCard = () => {
+  const twitterUrl = "https://twitter.com/toki_dev";
   return (
-    <Card className="from-twitterLight via-twitter to-twitterDark">
-      <img src="logo/twitter-logo-white.png" alt="twitter logo" />
-    </Card>
+    <a href={twitterUrl} target="_blank" rel="noopener">
+      <Card className="from-twitterLight via-twitter to-twitterDark">
+        <img src="logo/twitter-logo-white.png" alt="twitter logo" />
+      </Card>
+    </a>
   );
 };
 
 const QiitaCard = () => {
+  const qiitaUrl = "https://qiita.com/toki_dev";
   return (
-    <Card className="from-qiita to-qiita px-0">
-      <img src="logo/qiita.png" alt="Qiita logo" />
-    </Card>
+    <a href={qiitaUrl} target="_blank" rel="noopener">
+      <Card className="from-qiita to-qiita px-0">
+        <img src="logo/qiita.png" alt="Qiita logo" />
+      </Card>
+    </a>
   );
 };
 
