@@ -1,9 +1,10 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 export default async function Page() {
   return (
-    <div className="md:w-[700px] mx-auto px-6 md:px-0">
-      <article className="mt-20 flex gap-x-8 items-center">
+    <div className="w-[300px] md:w-[700px] mx-auto">
+      <article className="mt-20 px-2 flex gap-x-4 md:gap-x-8 items-center">
         <img
           src="profile.png"
           alt="profile"
@@ -13,14 +14,15 @@ export default async function Page() {
           <p className="text-sm">
             社会人1年目のエンジニア
             <br />
-            本業はメガベンで、web3界隈でも活動できるように勉強中
+            本業はメガベン、web3界隈でも活動できるように勉強中
           </p>
         </article>
       </article>
-      <div className="flex justify-between mt-20 flex-wrap gap-4">
+      <div className="flex justify-center md:justify-between mt-20 flex-wrap gap-6">
         <TwitterCard />
         <QiitaCard />
         <DevCard />
+        <BlogCard />
       </div>
     </div>
   );
@@ -30,7 +32,7 @@ const TwitterCard = () => {
   const twitterUrl = "https://twitter.com/toki_dev";
   return (
     <a href={twitterUrl} target="_blank" rel="noopener">
-      <Card className="from-twitterLight via-twitter to-twitterDark">
+      <Card className="from-twitterLight via-twitter to-twitterDark p-8">
         <img src="logo/twitter-logo-white.png" alt="twitter logo" />
       </Card>
     </a>
@@ -50,10 +52,23 @@ const QiitaCard = () => {
 
 const DevCard = () => {
   return (
-    <Card className="from-indigo-12 via-indigo-11 to-indigo-10">
-      <div className="text-3xl md:text-6xl">🧑‍💻</div>
-      <p className="font-bold md:pt-1">App</p>
-    </Card>
+    <Link href="/app">
+      <Card className="from-indigo-12 via-indigo-11 to-indigo-10">
+        <div className="text-3xl md:text-6xl">🧑‍💻</div>
+        <p className="font-bold md:pt-1">App</p>
+      </Card>
+    </Link>
+  );
+};
+
+const BlogCard = () => {
+  return (
+    <Link href="/blog">
+      <Card className=" from-violet-12 via-violet-11 to-violet-10">
+        <div className="text-3xl md:text-6xl">📝</div>
+        <p className="font-bold md:pt-1">Blog</p>
+      </Card>
+    </Link>
   );
 };
 
@@ -66,7 +81,7 @@ const Card = ({
 }) => {
   return (
     <div
-      className={`w-20 h-20 md:w-32 md:h-32 px-4 py-4 md:px-8 md:py-8 flex flex-col items-center justify-center rounded-xl bg-gradient-to-br cursor-pointer ${className}`}
+      className={`w-24 h-24 md:w-32 md:h-32 flex flex-col items-center justify-center rounded-xl bg-gradient-to-br transition-transform ease-in-out duration-300 cursor-pointer hover:scale-105 ${className}`}
     >
       {children}
     </div>
