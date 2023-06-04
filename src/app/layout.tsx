@@ -15,9 +15,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja">
-      <body>
-        <header>header</header>
+    <html lang="ja" className="dark">
+      <body className="bg-indigo-1 text-indigo-12">
+        {/* <header>header</header> */}
         {children}
       </body>
     </html>
