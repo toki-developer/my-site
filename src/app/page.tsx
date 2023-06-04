@@ -32,8 +32,12 @@ const TwitterCard = () => {
   const twitterUrl = "https://twitter.com/toki_dev";
   return (
     <a href={twitterUrl} target="_blank" rel="noopener">
-      <Card className="from-twitterLight via-twitter to-twitterDark p-8">
-        <img src="logo/twitter-logo-white.png" alt="twitter logo" />
+      <Card className="from-twitterLight via-twitter to-twitterDark">
+        <img
+          src="logo/twitter-logo-white.png"
+          alt="twitter logo"
+          className="w-10"
+        />
       </Card>
     </a>
   );
