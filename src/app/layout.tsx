@@ -1,5 +1,6 @@
 import "tailwindcss/tailwind.css";
 
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className="bg-indigo-1 text-indigo-12">
         {/* <header>header</header> */}
         {children}
+        <Analytics />
       </body>
     </html>
   );
